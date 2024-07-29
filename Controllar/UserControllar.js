@@ -21,7 +21,7 @@ const createUser = async (req, res) => {
         } else {
             const data = new user({ name, age, phone, address, email });
             await data.save();
-            const barcodeUrl = `http://yourdomain.com/api/user/${data._id}`;
+            const barcodeUrl = `https://barcode-030i.onrender.com/api/user/${data._id}`;
             data.barcodeUrl = barcodeUrl;
             bwipjs.toBuffer({
                 bcid: 'qrcode',       // बारकोड का प्रकार
